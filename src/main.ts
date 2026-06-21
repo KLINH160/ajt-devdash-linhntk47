@@ -1,6 +1,7 @@
 import { fetchProducts, fetchProductById, fetchCategories } from './api';
 import { renderProducts, renderProductDetail } from './ui';
 import type { Product } from './types';
+import { updateState } from './state';  
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
 let allProducts: Product[] = [];
@@ -61,9 +62,12 @@ async function init() {
     
     console.log("Danh mục đã tải song song:", categoriesData); 
     allProducts = productsData.products;
+
+    updateState({ status: 'success', data: allProducts });
     
     renderHomePage();
   } catch (error) {
+    updateState({ status: 'error', error: 'Fetch failed' });
     app.innerHTML = `<h2 style="color: red; text-align: center;">Lỗi tải dữ liệu. Vui lòng thử lại sau!</h2>`;
   }
 }

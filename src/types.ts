@@ -11,3 +11,5 @@ export interface Product {
 export interface ProductResponse {
   products: Product[];
 }
+
+export type ProductCardDTO = Pick<Product, 'id' | 'title' | 'price' | 'thumbnail' | 'category'>;
