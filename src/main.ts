@@ -18,7 +18,7 @@ async function renderHomePage() {
   app.innerHTML = `
     <div style="max-width: 1000px; margin: 0 auto; font-family: sans-serif;">
       <h1 style="text-align: center;">DevDash Store</h1>
-      <input type="text" id="searchInput" placeholder="Gõ tên sản phẩm... (chức năng tìm kiếm đã tối ưu Debounce)" style="padding: 12px; width: 100%; margin-bottom: 20px; box-sizing: border-box; border-radius: 6px; border: 1px solid #ccc; font-size: 16px;">
+      <input type="text" id="searchInput" placeholder="Gõ tên sản phẩm... " style="padding: 12px; width: 100%; margin-bottom: 20px; box-sizing: border-box; border-radius: 6px; border: 1px solid #ccc; font-size: 16px;">
       <div id="productList">${renderProducts(allProducts)}</div>
     </div>
   `;
