@@ -5,6 +5,6 @@ export interface Product {
   description: string;
 }
 
-export interface ProductResponse  {
+export interface ProductResponse {
   products: Product[];
 }
