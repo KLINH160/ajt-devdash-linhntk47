@@ -26,3 +26,7 @@ export async function fetchProductById(id: number): Promise<Product> {
     throw error;
   }
 }
+
+export async function fetchCategories(): Promise<string[]> {
+  return await fetchJson<string[]>('https://dummyjson.com/products/categories');
+}
